@@ -18,12 +18,20 @@ jxRequirements:
     enabled: false
     schedule: ""
   cluster:
+    azure:
+      secretStorage:
+        keyVaultName: alphjjx-vault
+    chartRepository: http://jenkins-x-chartmuseum.jx.svc.cluster.local:8080
+    environmentGitOwner: alphj
     gitKind: github
     gitName: github
     gitServer: https://github.com
     provider: aks
+    registry: alphjjx.azurecr.io
   environments:
   - key: dev
+    owner: alphj
+    repository: az-aks-cluster
   ingress:
     domain: ""
     externalDNS: false
@@ -32,6 +40,8 @@ jxRequirements:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: jx-bot
   repository: nexus
   secretStorage: azurekeyvault
   vault: {}

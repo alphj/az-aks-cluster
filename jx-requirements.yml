@@ -1,10 +1,35 @@
 apiVersion: core.jenkins-x.io/v4beta1
 kind: Requirements
 spec:
+  autoUpdate:
+    enabled: false
+    schedule: ""
   cluster:
+    azure:
+      secretStorage:
+        keyVaultName: alphjjx-vault
+    chartRepository: http://jenkins-x-chartmuseum.jx.svc.cluster.local:8080
+    environmentGitOwner: alphj
+    gitKind: github
+    gitName: github
+    gitServer: https://github.com
     provider: aks
+    registry: alphjjx.azurecr.io
   environments:
-    - key: dev
+  - key: dev
+    owner: alphj
+    repository: az-aks-cluster
   ingress:
-    tls: {}
+    domain: 52.154.52.52.nip.io
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  pipelineUser:
+    username: jx-bot
+  repository: nexus
   secretStorage: azurekeyvault
+  vault: {}
+  webhook: lighthouse
