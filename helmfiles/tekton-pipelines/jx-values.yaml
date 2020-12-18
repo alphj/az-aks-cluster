@@ -33,7 +33,7 @@ jxRequirements:
     owner: alphj
     repository: az-aks-cluster
   ingress:
-    domain: ""
+    domain: 52.154.52.52.nip.io
     externalDNS: false
     namespaceSubDomain: -tekton-pipelines.
     tls:

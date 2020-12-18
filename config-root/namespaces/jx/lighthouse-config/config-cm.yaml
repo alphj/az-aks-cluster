@@ -41,7 +41,7 @@ data:
         - needs-rebase
         repos:
         - alphj/az-aks-cluster
-      target_url: http://dashboard-jx.
+      target_url: http://dashboard-jx.52.154.52.52.nip.io
 kind: ConfigMap
 metadata:
   creationTimestamp: null
